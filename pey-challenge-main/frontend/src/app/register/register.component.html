@@ -9,12 +9,19 @@
     <form (ngSubmit)="onFormSubmit(form)" #form="ngForm">
       <!-- Input Fields -->
       <div class="input-row">
+        <div *ngIf="nameError" class="error-message">Please enter your name.</div>
         <label for="name">Name</label>
         <input ngModel type="text" name="name" class="input-field" placeholder="Name" [autofocus]>
       </div>
       <div class="input-row">
+        <div *ngIf="emailError" class="error-message">Please enter a valid email.</div>
         <label for="email">Email</label>
         <input ngModel name="email" type="email" class="input-field" placeholder="Email">
+      </div>
+      <div class="input-row">
+      <div *ngIf="colourError" class="error-message">Please select a colour.</div>
+        <label for="colour">Please select your favorite colour:</label>
+        <input ngModel name="colour" type="color" class="" value="#2b39ff">
       </div>
 
       <!-- Button -->

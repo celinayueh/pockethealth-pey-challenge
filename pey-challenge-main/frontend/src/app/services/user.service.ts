@@ -11,6 +11,7 @@ export class UserService {
   private userDetails?: {
     name: string
     email: string
+    colour: string
     userId: string
   };
 
@@ -26,12 +27,13 @@ export class UserService {
 
   /* Functions to send HTTP requests */
 
-  postRegister(name: string, email: string) {
+  postRegister(name: string, email: string, colour: string) {
     const url = `${environment.apiUrl}/register`;
 
     const body = {
       name,
       email,
+      colour,
     };
 
     return this.http.post<{ user_id: string }>(url, JSON.stringify(body))
@@ -41,6 +43,7 @@ export class UserService {
         this.userDetails = {
           name,
           email,
+          colour,
           userId: data.user_id
         };
       }));

@@ -1,0 +1,15 @@
+<div>
+  <!-- Header -->
+  <div class="modal-header modal-logo-header">
+    <img src="assets/logos/ph-logo.svg" alt="" class="ph-logo">
+  </div>
+  <!-- Body -->
+  <div>
+    <h2>Welcome to PocketHealth {{user?.name}}.</h2>
+    <h3>Your User ID is: {{user?.userId}}</h3>
+    <div class="fav-colour">
+        <h3>This is your favorite colour:</h3>
+        <div class="colour-icon" [ngStyle]="{'background-color': user?.colour}"></div>
+    </div>
+  </div>
+</div>
